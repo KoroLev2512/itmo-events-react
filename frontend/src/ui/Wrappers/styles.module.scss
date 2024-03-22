@@ -1,0 +1,9 @@
+@import "../../../styles/colors.scss";
+
+.default {
+  background-color: $primary-gray;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

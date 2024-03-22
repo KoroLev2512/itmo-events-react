@@ -1,0 +1,16 @@
+@import "../../../styles/variables.scss";
+
+.page {
+  display: flex;
+  max-width: 100dvw;
+  position: relative;
+  gap: 1em;
+}
+
+@media (max-width: 720px) {
+  .page {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+}

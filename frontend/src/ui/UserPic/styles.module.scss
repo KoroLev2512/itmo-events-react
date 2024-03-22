@@ -1,0 +1,16 @@
+@import "../../../styles/colors.scss";
+
+.pic {
+  border-radius: 100%;
+  border: 1px solid $secondary-gray-color !important;
+  overflow: hidden;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > img {
+    object-fit: cover;
+    object-position: center center;
+  }
+}

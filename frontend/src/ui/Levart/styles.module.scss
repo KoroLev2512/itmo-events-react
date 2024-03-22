@@ -1,0 +1,110 @@
+@import "../../../styles/mixins.scss";
+@import "../../../styles/colors.scss";
+@import "../../../styles/variables.scss";
+
+.cardItemExtraInfo {
+  display: flex;
+  p {
+    white-space: nowrap;
+  }
+  p:first-child {
+    margin-right: 16px;
+  }
+}
+
+.cardItemTitle {
+  margin-bottom: 10px;
+}
+
+.cardItemText {
+  display: flex;
+  flex-direction: column;
+  margin-left: 16px;
+}
+.cardImage {
+  border-radius: 15px;
+  height: 84px;
+}
+
+.cardSection {
+  padding: 0 16px;
+}
+
+.cardItem {
+  width: 95%;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  background-color: $secondary-background-color;
+  padding: 26px 26px;
+  border-radius: 30px;
+  margin: 0 16px 16px 0;
+}
+
+.arrowIcon {
+  margin-left: 20px;
+  padding: 6px 6px 2px;
+
+  &:hover {
+    background-color: var(--arrow-hover-color);
+  }
+  position: relative;
+  border-radius: 50%;
+}
+
+.cardItem span {
+  min-width: 90px;
+}
+
+.buttons {
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 26px 0;
+  //padding-right: 26px;
+  & button {
+    margin: 8px 8px 0;
+    padding: 6px 21px;
+    &:hover {
+      color: var(--button-hover-color);
+      border-color: var(--button-hover-color)
+    }
+  }
+  //& button:last-child {
+  //  margin: 0;
+  //}
+}
+
+@media (max-width: 1100px) {
+  .cardItem {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .cardItem {
+    width: 95%;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $secondary-background-color;
+    padding: 26px 26px;
+    border-radius: 30px;
+    margin: 0 16px 16px 0;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .cardSection {
+    padding: 0 0;
+  }
+}

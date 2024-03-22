@@ -1,0 +1,136 @@
+.select {
+  position: relative;
+  margin: 0 auto;
+
+  &[data-state="active"] {
+    .selectTitle {
+      border-radius: 15px 15px 0 0;
+      transition: all 0.3s;
+
+      &::before {
+        transform: translate(-3px, -50%) rotate(-45deg);
+      }
+
+      &::after {
+        transform: translate(3px, -50%) rotate(45deg);
+      }
+    }
+
+    .selectContent {
+      opacity: 1;
+    }
+
+    .selectLabel {
+      max-height: 40px;
+      border-bottom: 1px solid #BFCBD1;
+
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+}
+
+.selectTitle {
+  display: flex;
+  align-items: center;
+  min-width: 250px;
+  height: 100%;
+  padding: 10px 15px;
+  color: var(--main-color);
+  background: var(--white-color);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  border-radius: 15px;
+  border: 1px solid #BFCBD1;
+  cursor: pointer;
+  transition: all 0.3s;
+  user-select: none;
+
+  &::before,
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    right: 16px;
+
+    display: block;
+    width: 10px;
+    height: 2px;
+
+    transition: all 0.3s ease-out;
+
+    background-color: #333333;
+
+    transform: translate(-3px, -50%) rotate(45deg);
+  }
+
+  &::after {
+    transform: translate(3px, -50%) rotate(-45deg);
+  }
+
+  &:hover {
+    border-color: var(--main-color);
+
+    &::before,
+    &::after {
+      background-color: var(--main-color);
+    }
+  }
+}
+
+.selectContent {
+  position: absolute;
+  min-width: 250px;
+  user-select: none;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 0 15px 15px;
+  border: 1px solid #BFCBD1;
+  border-top: none;
+  background: var(--white-color);
+
+  transition: all 0.3s ease-out;
+
+  opacity: 0;
+  z-index: 8;
+}
+
+.selectInput {
+  display: none;
+
+  &:checked + option {
+    background-color: #dedede;
+  }
+
+  &:disabled + option {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}
+
+.selectLabel {
+  display: flex;
+  align-items: center;
+  min-width: 250px;
+  color: var(--gray-color);
+  margin: 0 15px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  height: 40px;
+  max-height: 0;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+  overflow: hidden;
+
+  &:hover {
+    color: var(--main-color);
+  }
+
+}

@@ -1,0 +1,197 @@
+@import "./colors.scss";
+@import "./mixins.scss";
+@import "./datepicker.scss";
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+@font-face {
+  font-family: "Regular";
+  src: url("/fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Medium";
+  src: url("/fonts/Montserrat-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Semibold";
+  src: url("/fonts/Montserrat-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "Bold";
+  src: url("/fonts/Montserrat-Bold.ttf");
+}
+
+body {
+  background-color: var(--secondary-background-color);
+  font-family: "Regular";
+  margin: 0;
+  font-size: 16px;
+}
+
+button, svg {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+:root {
+  --primary-background-color: #f5f8f9;
+  --secondary-background-color: #ffffff;
+
+  --white-color: #fff;
+  --light-gray-color: #f5f8f9;
+  --secondary-gray-color: #d9d9d9;
+  --gray-color: #73848c;
+  --brand-red-color: #ff2525;
+  --brand-blue-color: #1e51a4;
+  --main-color: #000000;
+  --sucess-color: #0da600;
+  --warning-color: #ed0b0b;
+  --button-color: #2482fe;
+  --button-hover-color: #1e71de;
+  --burger-hover-color: rgba(156, 196, 255, 0.6);
+  --arrow-hover-color: rgba(115, 132, 140, 0.25);
+
+  --yellow-color: #ffe074;
+  --primary-gray: #f5f5f5;
+  --icon-color: #fff;
+
+  --input-disabled-bg: rgba(136, 136, 136, 0.25);
+  --input-color-text: #000000;
+  --shadow-base: rgba(0, 0, 0, 0.2);
+  --header-color:  #f5f8f9;
+}
+
+:root[data-theme="dark"] {
+   --primary-background-color: #151111;
+   --secondary-background-color: #1E2228;
+
+   --white-color: #1E2228;
+   --light-gray-color: #262B33;
+   --secondary-gray-color: #656565;
+   --gray-color: #A8C1CC;
+   --brand-red-color: #FF2525;
+   --brand-blue-color: #367BEC;
+   --main-color: #ffffff;
+   --success-color: #0da600;
+   --warning-color: #ed0b0b;
+   --button-color: #2482fe;
+   --button-hover-color: #1e71de;
+   --burger-hover-color: rgba(130, 180, 255, 0.25);
+   --arrow-hover-color: rgba(159, 159, 159, 0.3);
+
+   --yellow-color: #ffe074;
+   --primary-gray: #3d3d3d;
+   --icon-color: #fff;
+
+  --input-disabled-bg: #9f9f9f;
+  --input-color-text: #000000;
+  --shadow-base: rgba(256, 256, 256, 0.3);
+  --header-color: #0b0b15;
+}
+
+
+p {
+  @include paragraph-2;
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  margin-bottom: 0.275em;
+}
+
+h1 {
+  @include heading-1;
+  color: var(--main-color);
+}
+
+h2 {
+  @include heading-2;
+  color: var(--main-color);
+}
+
+h3 {
+  @include heading-3;
+  color: var(--main-color);
+}
+
+h4 {
+  @include heading-4;
+  color: var(--main-color);
+}
+
+h5 {
+  @include heading-5;
+}
+
+input:disabled {
+  background-color: var(--input-disabled-bg);
+  color: var(--input-color-text);
+}
+
+// slick library
+
+.slick-slider {
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 30px;
+    color: var(--gray-color);
+  }
+
+  .slick-prev:before {
+    content: url("../public/icons/slick-left-icon.svg");
+  }
+
+  .slick-next:before {
+    content: url("../public/icons/slick-right-icon.svg");
+  }
+
+  .slick-slide {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slick-prev,
+  .slick-next {
+    bottom: 10px;
+    height: 100%;
+  }
+
+  .slick-prev {
+    left: -42px;
+  }
+  .slick-next {
+    right: -22px;
+  }
+
+  .slick-dots li {
+    width: 6px;
+  }
+  .slick-dots li.slick-active button:before {
+    color: var(--secondary-gray-color);
+  }
+  .slick-dots li button:before {
+    color: var(--secondary-gray-color);
+    opacity: 0.25;
+  }
+
+  .slick-dots {
+    bottom: 0;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+

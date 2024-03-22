@@ -1,0 +1,220 @@
+@import "../../../styles/mixins.scss";
+@import "../../../styles/colors.scss";
+@import "../../../styles/variables.scss";
+
+.list {
+  width: 100%;
+  padding: 10px 40px;
+  overflow-x: hidden;
+  display: flex;
+  mask-image: linear-gradient(
+                  to left,
+                  transparent,
+                  #000 5%,
+                  #000 95%,
+                  transparent
+  );
+}
+
+.slider {
+  position: relative;
+}
+
+.arrowPrev {
+  z-index: 10;
+  position: absolute;
+  left: 0;
+  top: 117px;
+}
+
+.arrowNext {
+  z-index: 10;
+  position: absolute;
+  right: 0;
+  top: 117px;
+}
+
+.card {
+  &:hover {
+    box-shadow: 0 0 15px var(--shadow-base);;
+    transition: 250ms !important;
+  }
+  border-radius: 28px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  box-sizing: border-box;
+  padding: 24px;
+  height: 254px;
+  min-width: 220px;
+  cursor: pointer;
+  > * {
+    border-radius: 28px;
+  }
+  margin-right: 24px;
+}
+
+.content {
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  padding: inherit;
+  padding-bottom: 0;
+  width: 100%;
+  color: #fff;
+  .date {
+    color: #fff;
+  }
+}
+
+.shadowWrapper {
+  background: linear-gradient(
+    1.05deg,
+    rgba(0, 0, 0, 0.51) 22.11%,
+    rgba(0, 0, 0, 0.04) 63.43%,
+    rgba(0, 0, 0, 0) 99.14%
+  );
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.requestsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px
+  //display: grid;
+  //grid-template-columns: repeat(2, 1fr);
+  //grid-template-rows: 1fr;
+  //grid-column-gap: 0;
+  //grid-row-gap: 0;
+
+
+}
+.requestsWrapperColumns {
+  display: flex;
+  flex-direction: column;
+  & > div {
+    margin-bottom: 32px;
+  }
+}
+
+.requestsCard {
+  padding: 0 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  & > * {
+    margin-bottom: 24px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.requestsList {
+  box-sizing: border-box;
+  align-self: center;
+  width: 100%;
+  padding: 8px 28px;
+  background-color: $secondary-background-color;
+  border-radius: 30px;
+  .requestsItem:not(:last-child) {
+    border-bottom: 1px solid $secondary-gray-color;
+  }
+}
+
+.createButton {
+  margin-right: 20px;
+}
+
+.requestsItemHeader {
+  height: 36px;
+  align-self: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.requestsItem {
+  position: relative;
+  box-sizing: border-box;
+  padding: 16px 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.requestsTopic {
+  padding-top: 5px;
+}
+
+.requestsDate {
+  @include paragraph-3;
+}
+.cardItemExtraInfo {
+  display: flex;
+  p {
+    white-space: nowrap;
+  }
+  p:first-child {
+    margin-right: 16px;
+  }
+}
+.cardItemTitle {
+  margin-bottom: 16px;
+}
+.requestsButton {
+  margin-left: auto;
+  width: 114px;
+  height: 24px;
+  font-size: 10px;
+  white-space: nowrap;
+}
+.requestsTitle {
+  margin-bottom: 16px;
+}
+.cardItemText {
+  display: flex;
+  flex-direction: column;
+}
+.cardImage {
+  border-radius: 15px;
+  width: 84px;
+  height: 84px;
+}
+
+.pastEventsSection {
+  padding: 0 16px;
+}
+.pastEventsList {
+  display: flex;
+  flex-wrap: wrap;
+}
+.pastEventsItem {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  background-color: $secondary-background-color;
+  padding: 26px 26px;
+  border-radius: 30px;
+  margin: 0 16px 16px 0;
+}
+
+.cardItemButtons {
+  display: flex;
+  margin-top: 16px;
+  & button {
+    margin-right: 8px;
+    font-size: 10px;
+    padding: 6px 21px;
+  }
+  & button:last-child {
+    margin: 0;
+  }
+
+}

@@ -1,0 +1,171 @@
+.formHeader {
+  margin-bottom: 16px;
+}
+
+.formHeaderImage {
+  background-color: #BFCBD1;
+  width: 100%;
+  border-radius: 45px 45px 0 0;
+  height: 132px; // absolute
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+}
+
+
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.uploadLabel {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formTitleWrapper {
+  background-color: var(--white-color);
+  border-radius: 0 0 45px 45px;
+  padding: 30px 56px 36px;
+}
+
+.formInput {
+  width: 100%;
+  display: flex;
+  color: var(--gray-color);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 120%;
+  border: none;
+  border-bottom: #BFCBD1 solid 1px;
+  padding: 0;
+  outline: none;
+  background-color: var(--white-color);
+
+  & :-webkit-autofill,
+  &:-webkit-autofill:focus {
+    transition: background-color 0s 600000s, color 0s 600000s;
+  }
+
+  &:focus {
+    color: var(--main-color);
+
+    border: none;
+    border-bottom: var(--button-hover-color) solid 1.5px;
+
+    &::-webkit-input-placeholder {
+      color: var(--main-color);
+    }
+  }
+
+  &MainText {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: normal;
+    color: var(--main-color);
+  }
+}
+
+
+.questionForm {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: var(--white-color);
+  border-radius: 45px;
+  margin-top: 16px;
+  padding: 24px 56px 36px;
+
+  &:last-child {
+    margin-bottom: 24px;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.question {
+
+}
+
+.answers {
+  margin-top: 26px;
+}
+
+.option {
+  color: var(--gray-color);
+  padding: 10px 0 10px 0;
+  margin: 0 15px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border-bottom: 1px solid #BFCBD1;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.required {
+  margin-top: 26px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 12px;
+}
+
+.submitButton {
+  margin-top: 24px;
+  border-radius: 15px;
+  background: var(--button-color);
+  width: 264px;
+  height: 51px;
+  color: var(--white-color);
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  border: none;
+  cursor: pointer;
+}
+
+.addQuestionIcon {
+  //display: flex;
+  //margin-top: 24px;
+  width: auto;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.binIcon {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.icon {
+  &:hover {
+    cursor: pointer;
+  }
+}

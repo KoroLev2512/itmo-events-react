@@ -1,0 +1,32 @@
+@import "../../../styles/variables";
+@import "../../../styles/colors.scss";
+
+.infoContent {
+  display: flex;
+
+  & > div {
+    padding-right: 24px;
+  }
+
+  & > div:last-child {
+    padding-right: 0px;
+  }
+}
+
+.events {
+  max-width: 1000px;
+}
+
+.description {
+  font-size: $font-xs;
+  line-height: 140%;
+}
+
+.list {
+  padding: 8px 28px;
+  background-color: $secondary-background-color;
+  border-radius: 30px;
+  .newsItem:not(:last-child) {
+    border-bottom: 1px solid $secondary-gray-color;
+  }
+}

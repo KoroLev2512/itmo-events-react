@@ -1,0 +1,49 @@
+@import "../../../styles/mixins.scss";
+@import "../../../styles/colors.scss";
+
+.card {
+  margin-top: 20px;
+  max-width: 230px;
+}
+
+.pic {
+  margin-bottom: 8px;
+}
+
+.title {
+  margin-bottom: 12px;
+}
+
+.content {
+  &:hover {
+    box-shadow: 0 12px 20px var(--shadow-base);
+    transition: 200ms;
+  }
+  background-color: var(--secondary-background-color);
+  border-radius: 30px;
+  overflow: hidden;
+  padding: 23px 28px;
+
+  box-sizing: border-box;
+  min-height: 302px;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    width: 128px;
+    &:hover {
+      background-color: $white-color;
+      color: var(--main-color);
+      border: 3px $button-color;
+      outline: 2px solid $button-color;
+    }
+  }
+}
+
+.descr {
+  margin-top: 8px;
+}

@@ -1,0 +1,13 @@
+@import "../../../styles/mixins.scss";
+
+.input {
+  padding: 8px 16px;
+  border-radius: 15px;
+  border: 1px solid var(--gray-color);
+  height: 36px;
+  box-sizing: border-box;
+  width: 100%;
+  @include paragraph-1;
+  color: var(--input-color-text);
+  font-weight: 500;
+}

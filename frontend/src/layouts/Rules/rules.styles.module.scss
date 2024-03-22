@@ -1,0 +1,65 @@
+@import "../../../styles/variables";
+@import "../../../styles/colors.scss";
+
+.infoContent {
+  display: flex;
+
+  & > div {
+    padding-right: 24px;
+  }
+
+  & > div:last-child {
+    padding-right: 0;
+  }
+}
+
+.events {
+  max-width: 1000px;
+}
+
+.description {
+  font-size: $font-xs;
+  line-height: 140%;
+}
+
+.list {
+  &:hover {
+    box-shadow: 0 4px 20px var(--shadow-base);
+    transition: 200ms;
+  }
+  padding: 30px;
+  background-color: $secondary-background-color;
+  border-radius: 30px;
+  flex-grow: 1;
+  margin-right: 24px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.wrapper {
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 24px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.item {
+  position: relative;
+  box-sizing: border-box;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.flex-parent {
+  display: flex;
+}
+
+.flex-item {
+  padding: .5em;
+  background: #efefef;
+  border: 3px solid #333;
+}

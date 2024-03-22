@@ -1,0 +1,58 @@
+@import "../../../styles/mixins.scss";
+@import "../../../styles/colors.scss";
+@import "../../../styles/variables.scss";
+
+.card {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  box-sizing: border-box;
+  padding: 24px;
+  height: 254px;
+  width: 222px;
+  cursor: pointer;
+  > * {
+    border-radius: 28px;
+  }
+  margin-right: 24px;
+}
+
+.title {
+  margin-bottom: 12px;
+}
+
+.list {
+  padding: 8px 28px;
+  background-color: $secondary-background-color;
+  border-radius: 30px;
+  .newsItem:not(:last-child) {
+    border-bottom: 10px solid $secondary-gray-color;
+
+  }
+}
+
+.newsTopic {
+  padding-top: 5px;
+}
+
+.newsItem {
+  position: relative;
+  box-sizing: border-box;
+  padding: 6px 0;
+
+  display: flex;
+  align-items: center;
+
+  .newsItemContent {
+    padding-right: 36px;
+    flex: 1;
+  }
+}
+
+.newsDate {
+  @include paragraph-3;
+}
+
+.newsText {
+  font-size: $font-xs;
+}

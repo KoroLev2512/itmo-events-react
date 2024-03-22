@@ -1,0 +1,39 @@
+@import "../../../styles/colors.scss";
+
+.background {
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.4);
+
+  height: 100dvh;
+  width: 100dvw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.popup {
+  position: relative;
+}
+
+.wrapper {
+  z-index: 4;
+  background-color: $white_color;
+  border-radius: 45px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.closeButton {
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  z-index: 2;
+  cursor: pointer;
+}

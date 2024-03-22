@@ -1,0 +1,576 @@
+openapi: 3.0.0
+info:
+  description: ""
+  title: Itmo Events
+  version: "1.0"
+paths:
+# ------------------User-------------------------
+  /api/user/add:
+    post:
+        tags:
+          - User
+        description: |
+          Add user
+        requestBody:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserAddAtts"
+        responses:
+          "200":
+            description: User added
+          "400":
+            description: User not added
+  /api/user/get/{user_id}:
+    get:
+        tags:
+          - User
+        description: |
+          Get user
+        parameters:
+        - description: User ID
+          in: path
+          name: user_id
+          required: true
+          schema:
+            type: integer
+            format: id
+          example: "12"
+        responses:
+          "200":
+            description: User data
+          "400":
+            description: Error
+  /api/user/update:
+    post:
+        tags:
+          - User
+        description: |
+          Update user
+        requestBody:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserUpdate"
+        responses:
+          "200":
+            description: User updated
+          "400":
+            description: User not updated
+  /api/user/delete/{user_id}:
+    delete:
+        tags:
+          - User
+        description: |
+          Delete user by ID
+        parameters:
+        - description: User ID
+          in: path
+          name: user_id
+          required: true
+          schema:
+            type: integer
+            format: id
+          example: "12"
+        responses:
+          "200":
+            description: User deleted
+          "400":
+            description: User not deleted
+            
+# ------------------EVENT-------------------------
+  /api/event/add:
+    post:
+        tags:
+          - Event
+        description: |
+          Add event
+        requestBody:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EventAddAtts"
+        responses:
+          "200":
+            description: Event added
+          "400":
+            description: Event not added
+  /api/event/get/{event_id}:
+    get:
+        tags:
+          - Event
+        description: |
+          Get event
+        parameters:
+        - description: Event ID
+          in: path
+          name: event_id
+          required: true
+          schema:
+            type: integer
+            format: id
+          example: "12"
+        responses:
+          "200":
+            description: Event data
+          "400":
+            description: Error
+  /api/event/get_all:
+    get:
+        tags:
+          - Event
+        description: |
+          Get all events
+        
+        responses:
+          "200":
+            description: Event data
+          "400":
+            description: Error
+  /api/event/update:
+    post:
+        tags:
+          - Event
+        description: |
+          Update event
+        requestBody:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EventUpdate"
+        responses:
+          "200":
+            description: Event updated
+          "400":
+            description: Event not updated
+  /api/event/delete/{event_id}:
+    delete:
+        tags:
+          - Event
+        description: |
+          Delete event
+        parameters:
+        - description: Event ID
+          in: path
+          name: event_id
+          required: true
+          schema:
+            type: integer
+            format: id
+          example: "12"
+        responses:
+          "200":
+            description: Event deleted
+          "400":
+            description: Event not deleted
+            
+# ------------------Notify-------------------------
+  /api/notify/add:
+    post:
+        tags:
+          - Notify
+        description: |
+          Add notify
+        requestBody:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotifyAddAtts"
+        responses:
+          "200":
+            description: Notify added
+          "400":
+            description: Notify not added
+  /api/notify/send:
+    post:
+        tags:
+          - Notify
+        description: |
+          Get notify
+        
+        responses:
+          "200":
+            description: Notify was sent to user
+          "400":
+            description: Error
+  /api/notify/delete/{notify_id}:
+    delete:
+        tags:
+          - Notify
+        description: |
+          Delete notify
+        parameters:
+        - description: Notify ID
+          in: path
+          name: notify_id
+          required: true
+          schema:
+            type: integer
+            format: id
+          example: "12"
+        responses:
+          "200":
+            description: Notify deleted
+          "400":
+            description: Notify not deleted
+
+# ------------------News-------------------------
+  /api/news/add:
+    post:
+        tags:
+          - News
+        description: |
+          Add news
+        requestBody:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NewsAddAtts"
+        responses:
+          "200":
+            description: News added
+          "400":
+            description: News not added
+  /api/news/get/{news_id}:
+    get:
+        tags:
+          - News
+        description: |
+          Get news
+        parameters:
+        - description: News ID
+          in: path
+          name: news_id
+          required: true
+          schema:
+            type: integer
+            format: id
+          example: "12"
+        responses:
+          "200":
+            description: News data
+          "400":
+            description: Error
+  /api/news/get_all:
+    get:
+        tags:
+          - News
+        description: |
+          Get all news
+        
+        responses:
+          "200":
+            description: News data
+          "400":
+            description: Error
+  /api/news/update:
+    post:
+        tags:
+          - News
+        description: |
+          Update news
+        requestBody:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NewsUpdate"
+        responses:
+          "200":
+            description: News updated
+          "400":
+            description: News not updated
+  /api/news/delete/{news_id}:
+    delete:
+        tags:
+          - News
+        description: |
+          Delete news
+        parameters:
+        - description: News ID
+          in: path
+          name: news_id
+          required: true
+          schema:
+            type: integer
+            format: id
+          example: "12"
+        responses:
+          "200":
+            description: News deleted
+          "400":
+            description: News not deleted
+            
+# ------------------UserDesisions-------------------------
+  /api/event_registration:
+    post:
+        tags:
+          - Desisions
+        description: |
+          Add news
+        requestBody:
+          content:
+            application/json:
+              schema: 
+                $ref: "#/components/schemas/User_desision"
+        responses:
+          "200":
+            description: News added
+          "400":
+            description: News not added
+  /api/event_cancel_registration:
+    post:
+        tags:
+          - Desisions
+        description: |
+          Get news
+        requestBody:
+          content:
+            application/json:
+              schema: 
+                $ref: "#/components/schemas/User_desision"
+        responses:
+          "200":
+            description: News data
+          "400":
+            description: Error
+  /api/apply_event:
+    post:
+        tags:
+          - Desisions
+        description: |
+          Get all news
+        requestBody:
+          content:
+            application/json:
+              schema: 
+                $ref: "#/components/schemas/User_desision"
+        responses:
+          "200":
+            description: News data
+          "400":
+            description: Error
+  /api/decline_event:
+    post:
+        tags:
+          - Desisions
+        description: |
+          Update news
+        requestBody:
+          content:
+            application/json:
+              schema: 
+                $ref: "#/components/schemas/User_desision"
+        responses:
+          "200":
+            description: News updated
+          "400":
+            description: News not updated
+
+
+components:
+  schemas:
+# -------------user_schemas-----------
+    UserAddAtts:
+      type: object
+      required:
+        - user_isu_number
+        - user_name
+        - user_surname
+        - user_patronymic
+        - phone
+        - vk_link
+        - mail
+        - is_russian_citizenship
+      properties:
+        user_isu_number:
+          type: integer
+        user_name:
+          type: string
+        user_surname:
+          type: string
+        user_patronymic:
+          type: string
+        phone:
+          type: string
+        vk_link:
+          type: string
+        mail:
+          type: string
+        is_russian_citizenship:
+          type: boolean
+      example:
+          user_isu_number: 288888
+          user_name: Nik
+          user_surname: Sul
+          user_patronymic: Serg
+          phone: 89117252325
+          vk_link: https://vk.com/n.sulimenko12
+          mail: nikita@mail.ru
+          is_russian_citizenship: True
+    UserUpdate:
+      type: object
+      properties:
+        user_data_to_update:
+          type: object
+          items:
+            $ref: "#/components/schemas/UserAddAtts"
+        user_id:
+          type: integer
+          example: 12
+      example:
+        user_data_to_update:
+          user_isu_number: 288888
+          user_name: Nik
+          user_surname: Sul
+          user_patronymic: Serg
+          phone: 89117252325
+          vk_link: https://vk.com/n.sulimenko12
+          mail: nikita@mail.ru
+          is_russian_citizenship: True
+        user_id: 12
+
+# -------------event_schemas-----------
+
+    EventAddAtts:
+      type: object
+      required:
+        - event_name
+        - time_start
+        - time_end
+        - description
+        - url_pdf
+        - people_count
+        - coefficient
+        - image
+      properties:
+        event_name:
+          type: string
+          description: len below 128 chars
+        time_start:
+          type: string
+          format: date-time
+        time_end:
+          type: string
+          format: date-time
+        description:
+          type: string
+        url_pdf:
+          type: string
+        people_count:
+          type: integer
+        coefficient:
+          type: integer
+        image:
+          type: string
+      example:
+        event_name: Petergof
+        time_start: 09/25/2022, 00:01:10
+        time_end: 09/30/2022, 00:01:10
+        description: Wonderfull events
+        url_pdf: http://lol
+        people_count: 10
+        coefficient: 25
+        image: /images/lol/lal.jpeg
+    EventUpdate:
+      type: object
+      properties:
+        event_data_to_update:
+          type: object
+          items:
+            $ref: "#/components/schemas/UserAddAtts"
+        event_id:
+          type: integer
+          example: 12
+      example:
+        event_data_to_update:
+          event_name: Petergof
+          time_start: 09/25/2022, 00:01:10
+          time_end: 09/30/2022, 00:01:10
+          description: Wonderfull events
+          url_pdf: http://lol
+          people_count: 10
+          coefficient: 25
+          image: /images/lol/lal.jpeg
+        event_id: 12
+
+# -------------notify_schemas-----------
+    NotifyAddAtts:
+      type: object
+      required:
+        - event_id
+        - notify_header
+        - notify_data
+      properties:
+        event_id:
+          type: integer
+        notify_header:
+          type: string
+          description: len below 128 chars
+        notify_data:
+          type: string
+      example:
+          event_id: 12
+          notify_header: Win!!!!!
+          notify_data: You are win in events X
+  
+# -------------news_schemas-----------
+
+    NewsAddAtts:
+      type: object
+      required:
+        - header
+        - data
+        - time
+      properties:
+        header:
+          type: string
+          description: len below 128 chars
+        data:
+          type: string
+        time:
+          type: string
+          format: date-time
+      example:
+          header: Hi everyone, we open new events!!!
+          data: At dd.mm you can go on events X!
+          time: 09-15-2022 00:01:00
+    NewsUpdate:
+      type: object
+      properties:
+        news_data_to_update:
+          type: object
+          items: 
+            $ref: "#/components/schemas/NewsAddAtts"
+        news_id: 
+          type: integer
+          example: 12
+      example:
+          news_data_to_update:
+            header: Hi everyone, we open new events!!!
+            data: At dd.mm you can go on events X!
+            time: 09-15-2022 00:01:00
+          news_id: 12
+
+# -------------user_desision_schemas-----------
+    User_desision:
+      type: object
+      required:
+        - event_id
+        - user_id
+      properties:
+        event_id:
+          type: integer
+          example: 12
+        user_id:
+          type: integer
+          example: 13
+      example:
+        event_id: 12
+        user_id: 12
+    
+    
+    
+  
+    
+    
+    

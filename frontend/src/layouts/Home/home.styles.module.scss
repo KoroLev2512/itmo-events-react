@@ -1,0 +1,47 @@
+@import "../../../styles/variables";
+
+.infoContent {
+  display: flex;
+  flex-wrap: wrap;
+
+  & > div {
+    padding-right: 24px;
+  }
+
+  & > div:last-child {
+    padding-right: 0;
+  }
+}
+
+.events {
+  max-width: 1000px;
+}
+
+.description {
+  font-size: $font-xs;
+  line-height: 140%;
+}
+
+.headingWrapper {
+  position: relative;
+}
+
+@media (max-width: 499px) {
+  .infoContent {
+    flex-direction: column; /* Элементы будут располагаться вертикально на мобильных устройствах */
+  }
+
+  .infoContent > div {
+    padding-right: 0; /* Убираем правый отступ на мобильных устройствах */
+    margin-bottom: 16px; /* Добавим отступ между элементами на мобильных устройствах */
+  }
+
+  .events {
+    max-width: none;
+  }
+
+  .description {
+    font-size: $font-sm; /* Можно изменить размер шрифта на мобильных устройствах */
+    line-height: 150%; /* Можно изменить высоту строки на мобильных устройствах */
+  }
+}

@@ -1,0 +1,18 @@
+@import "../../../styles/colors.scss";
+@import "../../../styles/variables.scss";
+
+.reviewCard {
+  background-color: $white_color;
+  padding: 20px 32px;
+
+  .reviewOwner {
+    margin-bottom: 8px;
+  }
+}
+
+.userPic {
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+  top: 4px;
+}

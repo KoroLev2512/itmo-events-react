@@ -1,0 +1,27 @@
+.card {
+  background: var(--secondary-background-color);
+  border-radius: 30px;
+  width: 100%;
+  padding: 36px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardTitle {
+  color: #000;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.arrowBlock {
+  width: 36px;
+  height: 36px;
+  background: var(--primary-background-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

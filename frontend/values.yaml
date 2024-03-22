@@ -1,0 +1,14 @@
+replicas: 1
+
+configVariables:
+  NEXT_PUBLIC_INTERNAL_HOST: https://events.itmo.space/api/
+  NEXT_PUBLIC_PUBLIC_HOST: https://events.itmo.space/api/
+
+network:
+  enabled: true
+  domain: events.itmo.space
+  pathPrefix: /
+  ingressClassName: itmo-events
+
+healthcheck:
+  enabled: false

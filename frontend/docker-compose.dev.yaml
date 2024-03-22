@@ -1,0 +1,106 @@
+version: "3"
+
+services:
+  api:
+    container_name: api
+    build:
+      context: ../backend
+      dockerfile: ./Dockerfile.dev
+    command: npm run start:dev
+    ports:
+      - "5001:5001"
+    networks:
+      - dev
+    restart: unless-stopped
+    environment:
+      - PORT=5001
+      - POSTGRES_HOST=postgres
+      - POSTGRES_USER=admin
+      - POSTGRES_DB=back-project
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_PORT=5432
+      - ITMOIDURL_AUTH=https://id.itmo.ru/auth/realms/itmo/protocol/openid-connect/auth
+      - ITMOIDURL_TOKEN=https://id.itmo.ru/auth/realms/itmo/protocol/openid-connect/token
+      - ITMOIDURL_USERINFO=https://id.itmo.ru/auth/realms/itmo/protocol/openid-connect/userinfo
+      - ITMOIDURL_LOGOUT=https://id.itmo.ru/auth/realms/itmo/protocol/openid-connect/logout
+      - ITMOIDURL_PUBLIC=https://id.itmo.ru/auth/realms/itmo/protocol/openid-connect/certs
+      - CLIENT_ID=students-project-event-dev
+      - CLIENT_SECRET=qPAD5a23FxJdmhYJ2YB0hjKmbBnonZBw
+      - REDIRECT_URI=http://localhost:8080/api/login
+      - LOGOUT_URI=http://my.itmo.ru
+    volumes:
+      - ../backend/src:/usr/src/app/src
+      - /usr/src/app/node_modules
+    depends_on:
+      - postgres
+
+
+  front:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: front
+    restart: unless-stopped
+    environment:
+      NEXT_PUBLIC_INTERNAL_HOST: http://api:5001/api
+      NEXT_PUBLIC_PUBLIC_HOST: http://localhost:8080/api
+    volumes:
+      - ./:/app
+      - /app/node_modules
+      - /app/.next
+    ports:
+      - "3000:3000"
+    networks:
+      - dev
+    links:
+      - api
+    depends_on:
+      - api
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: unless-stopped
+    depends_on:
+      - front
+      - api
+      - postgres
+    volumes:
+      - ./.nginx/nginx.dev.conf:/etc/nginx/nginx.conf
+    ports:
+      - "8080:8080"
+    networks:
+      - dev
+
+  postgres:
+    container_name: postgres
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_DB: back-project
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - dev
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: events@itmo.ru
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    networks:
+      - dev
+
+networks:
+  dev:
+    driver: bridge
+
+volumes:
+  pgdata:
+    driver: local

@@ -1,0 +1,47 @@
+@import "../../../styles/colors.scss";
+@import "../../../styles/variables.scss";
+
+.outerWrapper {
+  height: 100dvh;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-color: $secondary-background-color;
+  padding: 1em 1em 1em 0;
+  width: 100%;
+}
+
+.centerWrapper {
+  padding: 32px 0 0 0;
+}
+
+.wrapper {
+  padding: 32px 36px;
+  box-sizing: border-box;
+  flex: 1;
+  height: 100%;
+  overflow: auto;
+  border-radius: 30px;
+  background-color: $light-gray-color;
+}
+
+.wrapper::-webkit-scrollbar {
+  display: none; /* Скрываем скроллбар на устройствах с вебкит-движком (например, Safari и Chrome) */
+}
+
+@media (max-width: 720px) {
+  .outerWrapper {
+    padding: 0;
+  }
+  .wrapper {
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .outerWrapper {
+    padding: 0;
+  }
+  .wrapper {
+    border-radius: 0;
+  }
+}

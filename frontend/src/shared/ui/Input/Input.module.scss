@@ -1,0 +1,89 @@
+.label.outlined > * {
+  display: inline;
+  font-size: 12px;
+  color: var(--main-color);
+}
+
+.label.base > * {
+  display: inline;
+}
+
+
+.requiredStar {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--brand-red-color);
+  display: inline;
+  margin-left: 8px;
+}
+
+.InputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.Input {
+  color: var(--main-color);
+  min-width: 264px;
+
+  &::placeholder {
+    font-family: Montserrat, Arial, serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--gray-color);
+  }
+  &:active {
+    outline: none;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.Input.base {
+  border: none;
+  font-size: 16px;
+  border-bottom: 1px solid var(--gray-color);
+  width: fit-content;
+  &:active {
+    border: none;
+    border-bottom: 1px solid var(--button-hover-color);
+    width: auto;
+  }
+  &:focus {
+    border: none;
+    border-bottom: 1px solid var(--button-hover-color);
+    width: auto;
+  }
+  &:focus-visible {
+    border: none;
+    border-bottom: 1px solid var(--button-hover-color);
+    width: auto;
+  }
+}
+
+.Input.outlined {
+  border: 1px solid var(--gray-color);
+  border-radius: 15px;
+  width: 100%;
+  padding: 8px 16px;
+  font-size: 12px;
+  box-sizing: border-box;
+  &::placeholder {
+    font-size: 12px;
+  }
+  &:active {
+    border: 1px solid var(--button-hover-color);
+  }
+  &:focus {
+    border: 1px solid var(--button-hover-color);
+  }
+  &:focus-visible {
+    border: 1px solid var(--button-hover-color);
+  }
+}

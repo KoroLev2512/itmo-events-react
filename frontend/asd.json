@@ -1,0 +1,39 @@
+{
+  "event": {
+    "id": 97052,
+    "image": "https://drive.google.com/uc?export=view&id=1Op7FV2Q2hltl5b9XuiOfFJ5cqwXxfhP3",
+    "name": "ITMO.Megabattle. Гала-концерт",
+    "date": "2023-11-24T15:00:00+00:00",
+    "regOpenDate": "2023-11-17T23:59:00+00:00",
+    "regCloseDate": "2023-11-24T15:00:00+00:00",
+    "address": "ул. Ломоносова, д. 9",
+    "description": "<p>Раскрой свой потенциал вместе с ITMO.Megabattle!</p><p>Встречай 6 сезон проекта ITMO.Megabattle! Ещё больше масштаба и красок, креативных задумок и исполнений желаний.</p><p>Осенний Гала-концерт — самое масштабное мероприятие этого раунда!</p><p>5 Мегафакультетов сразятся за звание самого творческого коллектива. Это не только выступление на сцене, но и работа с реквизитом, светом, звуком и многим другим. Ответственные помогут тебе влиться в коллектив и раскрыть твой потенциал во время подготовки к выступлению!</p>",
+    "persons": [
+      {
+        "userPic": "https://drive.google.com/uc?export=view&id=1_DJ_fMtm5d7aDZjVb1-p9T1nDNvf1uof",
+        "fullName": "Свиненков Данила",
+        "role": "Главный организатор проекта",
+        "phone": "+79068403904"
+      },
+      {
+        "userPic": "https://drive.google.com/uc?export=view&id=16RrR59Piv0W5aG7Un8IzcsqkTmZtfK0i",
+        "fullName": "Саркисов Александр",
+        "role": "Заместитель главного организатора проекта",
+        "phone": "+79119084182"
+      }
+    ],
+    "socials": [{
+      "name": "ITMO.Megabattle",
+      "link": "string"
+    }],
+    "tags": [
+      {
+        "id": 0,
+        "label": "be friendly"
+      },
+      {
+        "id": 1,
+        "label": "be open"
+      }]
+  }
+}

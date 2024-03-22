@@ -1,0 +1,15 @@
+@import "../../../styles/colors.scss";
+@import "../../../styles/mixins.scss";
+
+.successful {
+  color: $sucess-color;
+}
+
+.warning {
+  color: $warning-color;
+}
+
+.date {
+  color: $gray-color;
+  @include paragraph-3;
+}

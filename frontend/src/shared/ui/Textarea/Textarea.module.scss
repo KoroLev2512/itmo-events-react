@@ -1,0 +1,48 @@
+.Textarea {
+  width: 100%;
+  box-sizing: border-box;
+  color: var(--input-color-text);
+  padding: 8px 16px;
+  border-radius: 15px;
+  border: 1px solid var(--gray-color);
+  resize: none;
+  font-size: 12px;
+  &::placeholder {
+    font-family: Montserrat, Arial, serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--gray-color);
+  }
+  &:active {
+    border: 1px solid var(--button-hover-color);
+    outline: none;
+  }
+  &:focus {
+    border: 1px solid var(--button-hover-color);
+    outline: none;
+  }
+  &:focus-visible {
+    border: 1px solid var(--button-hover-color);
+    outline: none;
+  }
+}
+
+.TextareaWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.label > * {
+  display: inline;
+  font-size: 12px!important;
+  color: var(--main-color);
+}
+
+.requiredStar {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--brand-red-color);
+  display: inline;
+  margin-left: 8px;
+}

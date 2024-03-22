@@ -1,0 +1,78 @@
+@import "../../../styles/mixins.scss";
+@import "../../../styles/colors.scss";
+@import "../../../styles/variables.scss";
+
+.menuItem a {
+  display: flex;
+  gap: 8px;
+  flex-wrap: nowrap;
+  align-items: center;
+  color: $gray-color;
+  cursor: pointer;
+
+  &:hover, span:hover {
+    color: $brand-blue-color;
+
+    svg path {
+      stroke: $brand-blue-color;
+    }
+  }
+
+  svg{
+    //margin-right: 8px;
+    flex-basis: 24px;
+    width: 24px;
+  }
+}
+.menuItem.active a {
+  color: $brand-blue-color;
+  & span {
+    color: $brand-blue-color;
+  }
+  & svg path {
+    stroke: $brand-blue-color;
+  }
+}
+.menuItemText {
+  white-space: nowrap;
+  transition: all 0.3s;
+  overflow: hidden;
+  flex: 1;
+}
+
+.toggleBeforeOpen {
+  opacity: 0;
+  flex: 0;
+  transition: all 0.3s;
+}
+
+@media (max-width: 720px) {
+  .menuItem {
+    display: none;
+    overflow: hidden;
+  }
+  .menuItemText {
+    white-space: nowrap;
+    transform: translate(-250px);
+    transition: transform 0.3s;
+  }
+
+  .toggleBeforeOpen {
+    opacity: 1;
+    flex: 1;
+  }
+
+  .openNav  {
+      display: flex;
+      padding-left: 9px;
+    .menuItemText  {
+      transform: translate(0);
+      color: var(--gray-color);
+    }
+    svg{
+      margin-right: 8px;
+    }
+  }
+}
+
+

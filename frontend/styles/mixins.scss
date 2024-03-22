@@ -1,0 +1,60 @@
+@import "./variables.scss";
+@import "./colors.scss";
+
+// paragraphs
+@mixin paragraph-1 {
+  font-size: 1em;
+  font-family: "Medium";
+  color: var(--gray-color);
+}
+
+@mixin paragraph-2 {
+  font-size: 0.75em;
+  font-family: "Medium";
+  color: var(--gray-color);
+}
+
+@mixin paragraph-3 {
+  font-size: 0.75em;
+  font-family: "Regular";
+  color: var(--gray-color);
+}
+
+// headings
+@mixin heading-5 {
+  font-size: 0.75em;
+  font-family: "Semibold";
+}
+
+@mixin heading-4 {
+  font-size: 0.875em;
+  font-family: "Semibold";
+//  color: var(--main-color);
+}
+
+@mixin heading-3 {
+  font-size: 1em;
+  font-family: "Semibold";
+//  color: var(--main-color);
+}
+
+@mixin heading-2 {
+  font-size: 1.125em;
+  font-family: "Semibold";
+//  color: var(--main-color);
+}
+
+@mixin heading-1 {
+  font-size: 1.5em;
+  font-family: "Semibold";
+//  color: var(--main-color);
+}
+
+@mixin no-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}

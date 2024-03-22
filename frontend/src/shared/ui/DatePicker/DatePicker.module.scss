@@ -1,0 +1,102 @@
+
+.label {
+  display: inline;
+  font-size: 12px !important;
+  color: var(--main-color);
+}
+
+.requiredStar {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--brand-red-color);
+  display: inline;
+  margin-left: 8px;
+}
+
+.InputWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.Input {
+  border: 1px solid var(--gray-color);
+  margin-top: 10px;
+  border-radius: 15px;
+  //width: 100%;
+  padding: 8px 16px;
+  font-size: 12px;
+  box-sizing: border-box;
+
+  &::placeholder {
+    font-family: Montserrat, Arial, serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--gray-color);
+  }
+
+  &:active {
+    border: 1px solid var(--gray-color);
+    outline: none;
+  }
+
+  &:focus {
+    border: 1px solid var(--gray-color);
+    outline: none;
+  }
+
+  &:focus-visible {
+    border: 1px solid var(--gray-color);
+    outline: none;
+  }
+}
+
+.Calendar {
+  border: none !important;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.08), 0 0 4px 0 rgba(0, 0, 0, 0.04);
+  background-color: var(--secondary-background-color) !important;
+  font-family: "Regular", serif !important;
+}
+
+.Header {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin: 5px 10px;
+  color: var(--gray-color);
+
+}
+
+.HeaderBtn {
+  color: var(--gray-color);
+}
+
+.HeaderDate {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  width: 120px;
+  font-size: 14px;
+  font-family: 'Semibold', serif;
+}
+
+.profilesStylesWrapper {
+  max-width: 40%;
+}
+
+.profileStylesPicker {
+  height: 36px;
+  margin-top: 0;
+  font-family: 'Medium';
+  font-size: 1em;
+  width: 100%;
+  //max-width: 45%;
+}
+
+.profilesStylesLabel {
+    font-weight: 400 !important;
+    font-size: 0.75em !important;
+    font-family: "Medium";
+    color: var(--gray-color);
+    margin: 0;
+    margin-bottom: 0.5em;
+}

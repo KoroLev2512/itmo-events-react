@@ -1,0 +1,20 @@
+.checkboxContainer {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+
+.checkbox {
+  fill: none;
+  stroke-width: 2;
+  transition: stroke 0.3s ease;
+}
+
+.checkboxLabel {
+  margin-left: 10px;
+  color: #73848C;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  user-select: none;
+}

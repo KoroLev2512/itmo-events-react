@@ -1,0 +1,26 @@
+@import "../../../styles/mixins.scss";
+@import "../../../styles/colors.scss";
+
+.card {
+  max-width: 262px;
+}
+
+.title {
+  margin-bottom: 12px;
+}
+
+.reviews {
+  background-color: $secondary-background-color;
+  border-radius: 30px;
+  overflow: hidden;
+
+  .newsItem:not(:last-child) {
+    border-bottom: 1px solid $secondary-gray-color;
+  }
+}
+
+.reviewSlider {
+  .slick-dots {
+    height: 240px !important;
+  }
+}

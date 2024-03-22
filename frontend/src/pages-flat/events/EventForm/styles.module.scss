@@ -1,0 +1,25 @@
+.formWrapper {
+  background-color: var(--white-color);
+  padding: 12px 24px 24px 24px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.button {
+  margin-top: 30px;
+}
+
+.formWrapper p {
+  margin-top: 10px;
+}
+
+.twoInRow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  & > * {
+    flex: 1;
+  }
+}

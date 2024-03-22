@@ -1,0 +1,56 @@
+@import "../../../styles/colors";
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
+.menuWrapper {
+  display: flex;
+}
+
+.menuButton {
+  margin: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+  @include paragraph-1;
+
+  &.active {
+    border-color: $button-hover-color;
+    color: $button-hover-color;
+  }
+}
+
+.block {
+  margin-top: 19px;
+  border-radius: 45px;
+  padding: 24px 56px 34px;
+  background-color: $secondary-background-color;
+
+  & label, input {
+    display: flex;
+  }
+
+  & label {
+    @include heading-1;
+    margin-bottom: 20px;
+
+    & span {
+      color: $warning-color;
+    }
+  }
+
+  & input {
+    border: none;
+    border-bottom: 1px solid #BFCBD1;
+    min-width: 284px;
+    outline: none;
+    transition: all 0.3s;
+    @include paragraph-1;
+
+    &:focus {
+      width: 100%;
+      border-color: $button-hover-color;
+    }
+  }
+}
+.redText{
+  color: red;
+}

@@ -1,0 +1,70 @@
+@import "../../../styles/colors";
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
+.menuWrapper {
+  display: flex;
+}
+
+.menuButton {
+  margin: 12px;
+  padding-left: 10px;
+  padding-right: 16px;
+  @include paragraph-1;
+
+  &.active {
+    border-color: $button-hover-color;
+    color: $button-hover-color;
+  }
+}
+
+.block {
+  margin-left: 0;
+  margin-top: 3px;
+  border-radius: 45px;
+  padding: 24px 56px 10px;
+  background-color: $secondary-background-color;
+
+  & label, input {
+    display: flex;
+  }
+
+  & label {
+    margin-bottom: 15px;
+
+    & span {
+      color: $warning-color;
+    }
+  }
+
+  & input {
+    border: none;
+    border-bottom: 1px solid #BFCBD1;
+    width: 25px;
+    outline: none;
+    @include paragraph-1;
+
+    &:focus {
+      border-color: $button-hover-color;
+    }
+  }
+}
+
+.choice-text {
+  & label, input {
+    @include heading-1;
+    display: flex;
+  }
+
+  & label {
+    @include heading-1;
+    margin-bottom: 15px;
+
+    & span {
+      color: $warning-color;
+    }
+  }
+}
+.redText{
+  color: red;
+}

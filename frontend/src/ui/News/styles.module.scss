@@ -1,0 +1,67 @@
+@import "../../../styles/mixins.scss";
+@import "../../../styles/colors.scss";
+@import "../../../styles/variables.scss";
+
+.card {
+  margin-top: 20px;
+  min-width: 370px;
+  max-width: 480px;
+}
+
+.title {
+  margin-bottom: 12px;
+}
+
+.list {
+  padding: 8px 28px;
+  background-color: $secondary-background-color;
+  border-radius: 30px;
+
+  .newsItem:not(:last-child) {
+    border-bottom: 1px solid $secondary-gray-color;
+  }
+}
+
+.newsTopic {
+  padding-top: 5px;
+}
+
+.newsItem {
+  position: relative;
+  box-sizing: border-box;
+  padding: 6px 0;
+
+  display: flex;
+  align-items: center;
+
+  .newsItemContent {
+    padding-right: 36px;
+    flex: 1;
+  }
+}
+
+.newsDate {
+  @include paragraph-3;
+}
+
+.newsText {
+  font-size: $font-xs;
+}
+
+
+@media (max-width: 539px) {
+  .card {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .list {
+    padding: 8px 16px; /* Уменьшим отступы на мобильных устройствах */
+    border-radius: 20px; /* Изменим скругление углов на мобильных устройствах */
+  }
+
+  .newsText {
+    font-size: $font-sm; /* Можно изменить размер шрифта на мобильных устройствах */
+  }
+}
+

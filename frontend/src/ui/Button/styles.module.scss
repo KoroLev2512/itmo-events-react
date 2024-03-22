@@ -1,0 +1,221 @@
+@import "../../../styles/colors.scss";
+@import "../../../styles/mixins.scss";
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+
+  svg:hover {
+    fill: $button-color;
+  }
+
+  svg {
+    margin-right: 8px;
+  }
+}
+
+.blankButton {
+}
+
+.transparentButton {
+  width:120px;
+  padding: 8px 35px;
+  border-radius: 15px;
+  background-color: transparent;
+  @include paragraph-2;
+  color: $gray-color;
+  border: 1px solid var(--gray-color);
+}
+
+.primaryButton {
+  padding: 9px 35px;
+  border-radius: 15px;
+  background-color: var(--button-color);
+  @include paragraph-2;
+  color: $white-color;
+
+  &:hover {
+    background-color: var(--button-color);
+    color: $white-color;
+  }
+}
+
+.secondaryButton {
+  margin:0 2px 0 2px;
+  padding: 8px 24px;
+  border-radius: 15px;
+  background-color: $primary-background-color;
+  @include paragraph-2;
+  color: $main-color;
+
+  &:hover {
+    background-color: $button-color;
+    color: $white-color;
+  }
+}
+
+.darklightButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+
+$light-toggle: #FFC361;
+$dark-toggle: #FFFBF3;
+
+$dark-toggle-background: #6D51AA;
+$light-toggle-background: #8eb4e0;
+
+$crater: #D8D3CB;
+$glare: #ffe1a9;
+
+$time: 200ms;
+
+$height: 25px;
+$width: 55px;
+$offset: 6px;
+
+.toggleWrapper {
+  user-select: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  input {
+    visibility: hidden;
+  }
+
+  .toggle {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    width: $width;
+    height: $height;
+    background-color: $light-toggle-background;
+    border-radius: $width - $offset;
+    transition: background-color $time;
+  }
+
+  .toggleItems {
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    top: $offset / 2;
+    left:  $offset / 2;
+    width: $height - $offset;
+    height: $height - $offset;
+    background-color: $light-toggle;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    transition-property: transform, top, left;
+    transition-duration: $time;
+    transform: rotate(-90deg);
+
+    .glare {
+      position: absolute;
+      width: $height / 2.5;
+      height: $height / 2.5;
+      border: solid ($height / 14) $glare;
+      border-color: transparent transparent $glare transparent;
+      border-radius: 0 0 200px 200px;
+      transform: rotate(220deg);
+      top: 15%;
+      left: 15%;
+      opacity: 1;
+      transition: opacity $time / 4;
+    }
+
+    .dot {
+      position: absolute;
+      background-color: $crater;
+      opacity: 0;
+      transition: opacity $time / 4;
+      border-radius: 100%;
+
+      &:nth-child(1) {
+        top: 30%;
+        left: 25%;
+        width: $height / 7;
+        height: $height / 7;
+      }
+
+      &:nth-child(2) {
+        top: 60%;
+        left: 50%;
+        width: $height / 6;
+        height: $height / 6;
+      }
+
+      &:nth-child(4) {
+        top: 20%;
+        right: 20%;
+        width: $height / 5;
+        height: $height / 5;
+      }
+    }
+  }
+
+  .toggleRay {
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity $time / 4;
+    transition-delay: $time / 4;
+  }
+
+  .ray {
+    width: $height / 4;
+    height: 2px;
+    position: absolute;
+    background: $light-toggle;
+    border-radius: $offset;
+    left: $height;
+    z-index: 1;
+
+    &:nth-child(1) {
+      top: $height / 2 - ($offset / 4);
+      left: $height + 1;
+    }
+
+    &:nth-child(2) {
+      width: $height / 5;
+      top: calc(20% - 1px);
+      transform: rotate(-20deg);
+      left: $height;
+    }
+
+    &:nth-child(3) {
+      width: $height / 5;
+      top: calc(80% - 2px);
+      transform: rotate(20deg);
+    }
+  }
+
+  input:checked {
+    + .toggle {
+      background-color: $dark-toggle-background;
+
+      .toggleItems {
+        background-color: $dark-toggle;
+        transform: translate3d($width - $height, 0, 0) rotate(0);
+
+        .dot { opacity: 1; }
+        .glare { opacity: 0; }
+      }
+
+      .toggleRay {
+        opacity: 0;
+      }
+    }
+  }
+}
+

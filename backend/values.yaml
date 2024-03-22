@@ -1,0 +1,41 @@
+replicas: 1
+
+vault:
+  enabled: true
+  vaultAddress: "https://vault.services.itmo.space"
+  roleName: "itmo-events"
+  mountPath: kubernetes
+  defaultPath: student-projects/data/itmo-events/backend
+  variables:
+    - name: POSTGRES_DB
+    - name: POSTGRES_USER
+    - name: POSTGRES_PASSWORD
+    - name: POSTGRES_HOST
+    - name: POSTGRES_PORT
+    - name: CLIENT_ID
+    - name: CLIENT_SECRET
+    - name: AWS_ACCESS_KEY_ID
+    - name: AWS_BUCKET_NAME
+    - name: AWS_DEFAULT_REGION
+    - name: AWS_ENDPOINT_URL
+    - name: AWS_SECRET_ACCESS_KEY
+configVariables:
+  ITMOIDURL_AUTH: https://id.itmo.ru/auth/realms/itmo/protocol/openid-connect/auth
+  ITMOIDURL_TOKEN: https://id.itmo.ru/auth/realms/itmo/protocol/openid-connect/token
+  ITMOIDURL_USERINFO: https://id.itmo.ru/auth/realms/itmo/protocol/openid-connect/userinfo
+  ITMOIDURL_LOGOUT: https://id.itmo.ru/auth/realms/itmo/protocol/openid-connect/logout
+  ITMOIDURL_PUBLIC: https://id.itmo.ru/auth/realms/itmo/protocol/openid-connect/certs
+  REDIRECT_URI: https://events.itmo.space/api/login
+  LOGOUT_URI: https://isu.ifmo.ru
+  PORT: 8080
+
+network:
+  enabled: true
+  domain: events.itmo.space
+  pathPrefix: /api
+  ingressClassName: itmo-events
+  ingressAnnotations:
+    nginx.ingress.kubernetes.io/proxy-buffer-size: "8k"
+
+healthcheck:
+  enabled: false

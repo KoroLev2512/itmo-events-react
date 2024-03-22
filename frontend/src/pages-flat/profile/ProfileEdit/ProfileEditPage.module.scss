@@ -1,0 +1,89 @@
+.popup {
+  padding: 32px 40px;
+  max-width: 600px;
+  min-height: 500px;
+}
+
+.profilePic {
+  color: var(--primary-background-color);
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 20px;
+
+  img {
+    border-radius: 30px;
+  }
+}
+
+.content {
+  display: flex;
+}
+
+.form {
+  display: flex;
+  flex: 1;
+}
+
+.photoSection {
+  width: 30%;
+  padding-right: 40px;
+}
+
+.fieldsSection {
+  width: 100%;
+}
+
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  //max-width: 350px; // check
+  //width: 50%;
+  gap: 12px;
+  flex: 1 1;
+  min-width: 270px;
+}
+
+.row {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.input {
+  //margin-right: 24px;
+  flex: 1;
+  color: var(--gray-color);
+}
+
+.input:last-of-type {
+  margin: 0;
+  color: var(--gray-color);
+}
+
+.actions {
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-end;
+
+  button {
+    width: 200px;
+    height: 33px;
+  }
+}
